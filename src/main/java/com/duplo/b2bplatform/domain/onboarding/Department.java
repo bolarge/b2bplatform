@@ -21,6 +21,7 @@ import java.util.*;
 public class Department extends BaseEntity {
     private String departmentName;
     private String departmentEmail;
+    private String departmentDescription;
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     private Business business;
@@ -31,6 +32,12 @@ public class Department extends BaseEntity {
     private Set<User> departmentStaff = new HashSet<>();
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Order> departmentOrders = new ArrayList<>();
+
+    public Department(String departmentName, String departmentEmail, String departmentDescription) {
+        this.departmentName = departmentName;
+        this.departmentEmail = departmentEmail;
+        this.departmentDescription = departmentDescription;
+    }
 
     public void addUserToDepartment(User user) {
         user.setDepartment(this);

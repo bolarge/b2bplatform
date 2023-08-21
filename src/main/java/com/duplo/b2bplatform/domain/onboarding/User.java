@@ -46,6 +46,15 @@ public class User extends BaseEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Department department;
 
+	public User(Title title, String email, String firstName, String lastName, String mobilePhone, EmploymentType employmentType) {
+		this.title = title;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobilePhone = mobilePhone;
+		this.employmentType = employmentType;
+	}
+
 	@JsonIgnore
 	public void addRole(String roleName) {
 		if(this.roles == null) {
