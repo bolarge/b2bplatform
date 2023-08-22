@@ -1,3 +1,4 @@
+/*
 package com.duplo.b2bplatform.client;
 
 import com.duplo.b2bplatform.config.B2BConfig;
@@ -6,9 +7,11 @@ import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import reactor.netty.http.client.HttpClient;
 
+@Configuration
 @RequiredArgsConstructor
 public class WebClient {
     private final B2BConfig b2BConfig;
@@ -29,3 +32,4 @@ public class WebClient {
                         .addHandlerLast(new WriteTimeoutHandler(5)));
     }
 }
+*/

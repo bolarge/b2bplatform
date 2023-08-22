@@ -34,7 +34,7 @@ public class B2BServiceImpl implements B2BService {
     private final UserRepository userRepository;
     private final PurchaseOrderRepository purchaseOrderRepository;
     private final B2BConfig b2BConfig;
-    private com.duplo.b2bplatform.client.WebClient cl;
+
     private final WebClient.Builder wBuilder;
 
     @Override
@@ -62,7 +62,7 @@ public class B2BServiceImpl implements B2BService {
     }
     private Mono<String> logPurchaseOrderToTaxOffice(PurchaseOrder purchaseOrder){
         var taxLog = new TaxLog(purchaseOrder.getOrderId().toString(), b2BConfig.getPlatformCode(), purchaseOrder.getTotalPrice().toString());
-        return cl.getWebClient(wBuilder).post()
+        return b2BConfig.getWebClient(wBuilder).post()
                 .uri(b2BConfig.getTaxLogApiUrl())
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .body(Mono.just(taxLog), TaxLog.class)
