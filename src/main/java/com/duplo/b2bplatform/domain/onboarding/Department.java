@@ -1,7 +1,7 @@
 package com.duplo.b2bplatform.domain.onboarding;
 
 import com.duplo.b2bplatform.domain.BaseEntity;
-import com.duplo.b2bplatform.domain.order.Order;
+import com.duplo.b2bplatform.domain.order.PurchaseOrder;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -31,7 +31,7 @@ public class Department extends BaseEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY, orphanRemoval = true)
     private Set<User> departmentStaff = new HashSet<>();
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department", fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<Order> departmentOrders = new ArrayList<>();
+    private List<PurchaseOrder> departmentPurchaseOrders = new ArrayList<>();
 
     public Department(String departmentName, String departmentEmail, String departmentDescription) {
         this.departmentName = departmentName;
@@ -52,17 +52,17 @@ public class Department extends BaseEntity {
         getDepartmentStaff().addAll(users);
     }
 
-    public void addDepartmentOrder(Order order) {
-        order.setDepartment(this);
-        getDepartmentOrders().add(order);
+    public void addDepartmentOrder(PurchaseOrder purchaseOrder) {
+        purchaseOrder.setDepartment(this);
+        getDepartmentPurchaseOrders().add(purchaseOrder);
     }
-    public void removeDepartmentOrder(Order order) {
-        getDepartmentOrders().remove(order);
+    public void removeDepartmentOrder(PurchaseOrder purchaseOrder) {
+        getDepartmentPurchaseOrders().remove(purchaseOrder);
     }
 
-    public void addDepartmentOrders(Set<Order> orders) {
-        ((Order) orders).setDepartment(this);
-        getDepartmentOrders().addAll(orders);
+    public void addDepartmentOrders(Set<PurchaseOrder> purchaseOrders) {
+        ((PurchaseOrder) purchaseOrders).setDepartment(this);
+        getDepartmentPurchaseOrders().addAll(purchaseOrders);
     }
 
     @Override

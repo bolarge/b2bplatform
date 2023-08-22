@@ -1,7 +1,7 @@
 package com.duplo.b2bplatform.domain.inventory;
 
 import com.duplo.b2bplatform.domain.NamedEntity;
-import com.duplo.b2bplatform.domain.order.Order;
+import com.duplo.b2bplatform.domain.order.PurchaseOrder;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
@@ -20,6 +20,6 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Inventory extends NamedEntity {
     @OneToOne
-    private Order order;
+    private PurchaseOrder purchaseOrder;
     private int quantity;
 }

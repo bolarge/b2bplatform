@@ -6,34 +6,33 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @MappedSuperclass
 public class NamedEntity extends BaseEntity {
-
-    protected String name;
-    protected String description;
+    protected String itemName;
+    protected String itemDescription;
     protected boolean status = false;
 
     public NamedEntity(String name){
-        this.name = name;
+        this.itemName = name;
     }
 
     public NamedEntity(String name, String description) {
         this(name);
-        this.description = description;
+        this.itemDescription = description;
     }
 
-    public String getName() {
-        return this.name;
+    public String getItemName() {
+        return this.itemName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setItemName(String name) {
+        this.itemName = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setItemDescription(String description) {
+        this.itemDescription = description;
     }
 
     public boolean isStatus() {
@@ -43,6 +42,5 @@ public class NamedEntity extends BaseEntity {
     public void setStatus(boolean status) {
         this.status = status;
     }
-
 
 }
