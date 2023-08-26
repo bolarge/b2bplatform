@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  postgresdb:
+    container_name: b2bplatform_db
+    image: 'postgres:12.16'
+    env_file: ./.env
+    environment:
+      - POSTGRES_DB=${APP_DB_DATABASE}
+      - POSTGRES_PASSWORD=${APP_DB_PASSWORD}
+      - POSTGRES_USER=${APP_DB_USER}
+    ports:
+      - ${APP_DB_DOCKER_PORT}:${APP_DB_LOCAL_PORT}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  b2bplatform:
+    container_name: b2bplatform_app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file: ./.env
+    ports:
+      - ${APP_DOCKER_PORT}:${APP_LOCAL_PORT}
+    environment:
+      SPRING_APPLICATION_JSON: '{
+          "spring.datasource.url"  : "jdbc:postgresql://postgresdb:$APP_DB_DOCKER_PORT/$APP_DB_DATABASE",
+          "spring.datasource.username" : "${APP_DB_USER}",
+          "spring.datasource.password" : "${APP_DB_PASSWORD}",
+          "spring.jpa.properties.hibernate.dialect" : "${APP_DB_DIALECT}",
+          "spring.jpa.hibernate.ddl-auto" : "update"
+      }'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+    depends_on:
+      - postgresdb
+
+volumes:
+  db-data:

@@ -104,7 +104,7 @@ To view specs, visit http://localhost:8585/b2b/swagger-ui/index.html#/
 
 Where tag is the docker tag you wish to run locally, you can build and push your local branch using
 ```bash
-bash .mvn/publish.sh
+bash .mvn/publish.sh1
 ```
 
 You can build and publish and run locally using
@@ -119,5 +119,5 @@ bash run.sh
 
 #### Build and publish image locally
 ```bash
-bash .mvn/publish.sh
+bash .mvn/publish.sh1
 ```
