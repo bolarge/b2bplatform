@@ -4,6 +4,7 @@ services:
   postgresdb:
     container_name: b2bplatform_db
     image: 'postgres:12.16'
+    restart: unless-stopped
     env_file: ./.env
     environment:
       - POSTGRES_DB=${APP_DB_DATABASE}
@@ -15,9 +16,11 @@ services:
       - db-data:/var/lib/postgresql/data
   b2bplatform:
     container_name: b2bplatform_app
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: 'b2bplatform:latest'
+    restart: on-failure
+    #build:
+      #context: ./
+      #dockerfile: Dockerfile
     env_file: ./.env
     ports:
       - ${APP_DOCKER_PORT}:${APP_LOCAL_PORT}

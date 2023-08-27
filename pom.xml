@@ -87,11 +87,6 @@
 			<optional>true</optional>
 		</dependency>-->
 
-		<!--<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>-->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -174,8 +169,7 @@
 					<container>
 						<mainClass>com.duplo.b2bplatform.B2BPlatformApplication</mainClass>
 					</container>
-					<!-- openjdk:11.0.5-jre -->
-					<from>c
+					<from>
 						<image>eopenjdk:17-ea-4-jre</image>
 					</from>
 					<to>

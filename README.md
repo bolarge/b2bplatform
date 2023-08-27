@@ -63,7 +63,7 @@ Sample expected JSON request payload is:
 
 ## System Requirements
 * Java 20
-* Mysql 8
+* Postgres 12
 * Maven
 * Springboot 3
 * Spring Web MVC
@@ -78,46 +78,28 @@ Application is a monolith maven project with no internal sub modules. It inherit
 Hibernate ddl.auto flag is set to update, therefore, b2bdb database is to be created. Run below code
 from any postgres client terminal
 ```properties
-CREATE DATABASE b2bdb;;
+CREATE DATABASE b2bdb;
 ```
 
 #### Run locally
 Start server using
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 To view specs, visit http://localhost:8585/b2b/swagger-ui/index.html#/
 
 #### Run locally via docker compose
 ##### Requirement: Ensure your Docker-daemon is up and running. Docker Desktop.
+```bash
+  cd b2bplatform
+  copy the compose.yml to the dir
+  docker compose up
+```
 
 ##### Run Docker login
 ```bash
-    docker login -u <username> docker
+    docker login -u <username>
 ```
 
-##### Spawn up the containers
-```bash
-    TAG=1.0.0 docker-compose up
-```
 
-Where tag is the docker tag you wish to run locally, you can build and push your local branch using
-```bash
-bash .mvn/publish.sh1
-```
-
-You can build and publish and run locally using
-```bash
-bash run.sh
-```
-
-#### Run tests
-```bash
-./mvnw clean test
-```
-
-#### Build and publish image locally
-```bash
-bash .mvn/publish.sh1
-```
