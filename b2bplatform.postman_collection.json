@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "977af70b-cfd4-4bdf-801c-e0e4d31b449d",
+		"name": "b2bplatform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2988120"
+	},
+	"item": [
+		{
+			"name": "businesses",
+			"item": [
+				{
+					"name": "open business account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"businessName\": \"Glory Feeds\",\n  \"businessEmail\": \"inquiry_gf@gmail.com\",\n  \"firstName\": \"Edidi\",\n  \"lastName\": \"Danladi\",\n  \"email\": \"ed_gf@gmail.com\",\n  \"phoneNumber\": \"08034786512\",\n  \"departmentName\": \"Admin\",\n  \"departmentDescription\": \"Administer sales and distribution\",\n  \"id\": 0,\n  \"businessId\": \"string\",\n  \"departmentId\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}business",
+							"host": [
+								"{{BASE_URL}}business"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "by business id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}business/103",
+							"host": [
+								"{{BASE_URL}}business"
+							],
+							"path": [
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Mr\",\n  \"email\": \"ao_gf@gmail.com\",\n  \"firstName\": \"Akin\",\n  \"lastName\": \"Omole\",\n  \"phoneNumber\": \"07166750012\",\n  \"employmentType\": \"Staff\",\n  \"id\": 0,\n  \"businessId\": \"string\",\n  \"departmentId\": \"string\",\n  \"roleId\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}business/103/user",
+							"host": [
+								"{{BASE_URL}}business"
+							],
+							"path": [
+								"103",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all businesses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}business",
+							"host": [
+								"{{BASE_URL}}business"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add department",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"departmentName\": \"Salas\",\n  \"description\": \"Manages finance and sourcing for the firm\",\n  \"departmentEmail\": \"acc_gf@gmail.com\",\n  \"businessId\": \"string\",\n  \"id\": 0,\n  \"departmentId\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}business/103/department",
+							"host": [
+								"{{BASE_URL}}business"
+							],
+							"path": [
+								"103",
+								"department"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "departments",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}department/7/user/57",
+							"host": [
+								"{{BASE_URL}}department"
+							],
+							"path": [
+								"7",
+								"user",
+								"57"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "purchaseorders",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}purchase-order/7/credit-score",
+							"host": [
+								"{{BASE_URL}}purchase-order"
+							],
+							"path": [
+								"7",
+								"credit-score"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}purchase-order/7/transaction-report",
+							"host": [
+								"{{BASE_URL}}purchase-order"
+							],
+							"path": [
+								"7",
+								"transaction-report"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
