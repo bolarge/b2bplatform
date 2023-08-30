@@ -1,4 +1,4 @@
-package com.duplo.b2bplatform.dataaccess;
+package com.duplo.b2bplatform.dataaccess.springdatajpa;
 
 import com.duplo.b2bplatform.domain.onboarding.Department;
 import com.duplo.b2bplatform.domain.order.PurchaseOrder;

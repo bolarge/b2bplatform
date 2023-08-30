@@ -1,10 +1,10 @@
 package com.duplo.b2bplatform.service.impl;
 
 import com.duplo.b2bplatform.config.B2BConfig;
-import com.duplo.b2bplatform.dataaccess.BusinessRepository;
-import com.duplo.b2bplatform.dataaccess.DepartmentRepository;
-import com.duplo.b2bplatform.dataaccess.PurchaseOrderRepository;
-import com.duplo.b2bplatform.dataaccess.UserRepository;
+import com.duplo.b2bplatform.dataaccess.springdatajpa.BusinessRepository;
+import com.duplo.b2bplatform.dataaccess.springdatajpa.DepartmentRepository;
+import com.duplo.b2bplatform.dataaccess.springdatajpa.PurchaseOrderRepository;
+import com.duplo.b2bplatform.dataaccess.springdatajpa.UserRepository;
 import com.duplo.b2bplatform.datatransfer.*;
 import com.duplo.b2bplatform.domain.onboarding.*;
 import com.duplo.b2bplatform.domain.order.OrderStatus;
