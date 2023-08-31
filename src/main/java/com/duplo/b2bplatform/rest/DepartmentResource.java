@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class DepartmentResource {
 
     private final B2BService b2BService;
-    @PutMapping("/{id}/user/{userId}")
+    @PutMapping("/{id}/add-user/{userId}")
     public ResponseEntity<?> addStaffToABusinessDepartment(@PathVariable("id") Integer id, @PathVariable("userId") Integer userId){
         var requestResponse = b2BService.addStaffToABusinessDepartment(id, userId);
         return ResponseEntity.ok(requestResponse);

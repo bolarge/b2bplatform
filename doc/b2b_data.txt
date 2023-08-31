@@ -1,0 +1,162 @@
+
+
+/////
+/////
+
+CREATE A BUSINESS
+
+{
+  "businessName": "Delight Bakery",
+  "businessEmail": "sales_db@gmail.com",
+  "firstName": "Adebola",
+  "lastName": "Omoakin",
+  "email": "ao_db@gmail.com",
+  "phoneNumber": "08189237867",
+  "departmentName": "Sales",
+  "departmentDescription": "Administer sales and distribution",
+  "id": 0,
+  "businessId": "string",
+  "departmentId": "string"
+}
+
+{
+  "businessName": "Mamas' Kitchen",
+  "businessEmail": "sales_mk@gmail.com",
+  "firstName": "Chiyere",
+  "lastName": "Jabbita",
+  "email": "cj_mk@gmail.com",
+  "phoneNumber": "08000126543",
+  "departmentName": "Admin",
+  "departmentDescription": "Operation all aspect of the restuarant",
+  "id": 0,
+  "businessId": "string",
+  "departmentId": "string"
+}
+
+{
+  "businessName": "Glory Feeds",
+  "businessEmail": "inquiry_gf@gmail.com",
+  "firstName": "Edidi",
+  "lastName": "Danladi",
+  "email": "ed_gf@gmail.com",
+  "phoneNumber": "08034786512",
+  "departmentName": "Admin",
+  "departmentDescription": "Administer sales and distribution",
+  "id": 0,
+  "businessId": "string",
+  "departmentId": "string"
+}
+
+//////
+ADD DEPARTMENT HEAD STAFF
+//////
+
+{
+  "title": "Mr",
+  "email": "bs_db@gmail.com",
+  "firstName": "Bolaji",
+  "lastName": "Salau",
+  "phoneNumber": "08122330099",
+  "employmentType": "Staff",
+  "id": 0,
+  "businessId": "string",
+  "departmentId": "string",
+  "roleId": "string"
+}
+
+{
+  "title": "Mrs",
+  "email": "nn_mk@gmail.com",
+  "firstName": "Nneka",
+  "lastName": "Nnamdi",
+  "phoneNumber": "08122331389",
+  "employmentType": "Staff",
+  "id": 0,
+  "businessId": "string",
+  "departmentId": "string",
+  "roleId": "string"
+}
+
+{
+  "title": "Mr",
+  "email": "ao_gf@gmail.com",
+  "firstName": "Akin",
+  "lastName": "Omole",
+  "phoneNumber": "07166750012",
+  "employmentType": "Staff",
+  "id": 0,
+  "businessId": "string",
+  "departmentId": "string",
+  "roleId": "string"
+}
+
+/////
+CREATE A DEPARTMENT
+/////
+
+{
+  "departmentName": "Account",
+  "description": "Administers financial of the business",
+  "departmentEmail": "acc_db@gmail.com",
+  "businessId": "string",
+  "id": 0,
+  "departmentId": "string"
+}
+
+{
+  "departmentName": "Procurement",
+  "description": "Managing purchases and other sourcing for the firm",
+  "departmentEmail": "acc_mk@gmail.com",
+  "businessId": "string",
+  "id": 0,
+  "departmentId": "string"
+}
+
+{
+  "departmentName": "Salas",
+  "description": "Manages finance and sourcing for the firm",
+  "departmentEmail": "acc_gf@gmail.com",
+  "businessId": "string",
+  "id": 0,
+  "departmentId": "string"
+}
+
+//////
+REQUEST PURCHASE ORDER
+//////
+
+{
+  "itemName": "Baking Soda",
+  "itemDescription": "Baking Soda Powder",
+  "itemUnitPrice": "10",
+  "orderQuantity": "12",
+  "staffEmail": "string",
+  "totalOrderPrice": "string",
+  "orderStatus": "string",
+  "businessId": "string",
+  "purchaseOrderId": "string"
+}
+
+{
+  "itemName": "Mama Gold Rice",
+  "itemDescription": "Par boilded premium rice",
+  "itemUnitPrice": "45000",
+  "orderQuantity": "15",
+  "staffEmail": "string",
+  "totalOrderPrice": "string",
+  "orderStatus": "string",
+  "businessId": "string",
+  "purchaseOrderId": "string"
+}
+
+{
+  "itemName": "Dried Groundnut",
+  "itemDescription": "Sun dried groundnuts",
+  "itemUnitPrice": "8500",
+  "orderQuantity": "15",
+  "staffEmail": "string",
+  "totalOrderPrice": "string",
+  "orderStatus": "string",
+  "businessId": "string",
+  "purchaseOrderId": "string"
+}

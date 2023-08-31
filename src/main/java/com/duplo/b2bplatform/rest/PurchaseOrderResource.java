@@ -32,12 +32,12 @@ public class PurchaseOrderResource {
         responseHeaders.setLocation(newPurchaseOrderUri);
         return new ResponseEntity<>(requestResponse, responseHeaders, HttpStatus.CREATED);
     }
-    @GetMapping("/{departmentId}/credit-score")
+    @GetMapping("/{departmentId}/calculate-credit-score")
     public ResponseEntity<?> getCreditScore(@PathVariable("departmentId") Integer departmentId){
         var queryResponse = b2BService.calculateCreditScore(departmentId);
         return ResponseEntity.ok(queryResponse);
     }
-    @GetMapping("/{departmentId}/transaction-report")
+    @GetMapping("/{departmentId}/get-transaction-report")
     public ResponseEntity<?> getPurchaseOrderReport(@PathVariable("departmentId") Integer departmentId){
         var queryResponse = b2BService.getDepartmentPurchaseOrderReport(departmentId);
         return ResponseEntity.ok(queryResponse);
